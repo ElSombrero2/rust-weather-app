@@ -1,0 +1,95 @@
+div.action{
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+    color: white;
+    background-color: 'blue';
+    span.button{
+        display: inline-block;
+        transition: transform 200ms, opacity 300ms;
+        cursor: pointer;
+        &:hover{ transform: scale(1.1); }
+        &:active{ opacity: 0.3; }
+    }
+}
+
+div.content-root{
+    overflow: hidden;
+    border-radius: 5px;
+    position: absolute;
+    width: 100vw;
+    z-index: 0 !important;
+    div.container{
+        display: grid;
+        grid-template-columns: auto auto;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        div.right{ 
+            width: 75vw;
+            background-color: white;
+            div.partial-title {
+                p.text{
+                    -webkit-text-fill-color: transparent !important;
+                    -webkit-background-clip: text !important;
+                    display:block;
+                    background-repeat: no-repeat !important;
+                    background-size: cover !important;
+                    background-position: center !important;
+                    background-attachment: fixed !important;
+                }
+            } 
+            div.meteo{
+                max-width: 300px; 
+                margin-top: -90px; 
+                margin-left: 20px;
+                .info{
+                    display: flex;
+                    justify-content: end;
+                    font-size: 30px;
+                    color: #4F7282;
+                    strong{
+                        margin-right: 10px;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+        div.left{ 
+            width: 40vw;
+            color: white;
+            padding-left: 30px;
+            background-color: #00000066;
+            .partial-title{ justify-content: end; }
+        }
+        .partial-title{
+            width: 100%;
+            display: flex;
+            p{
+                font-weight: bolder;
+                font-size: 90px;
+            }
+        }            
+    }
+}
+
+div.content{ position: absolute; }
+div.content.roll{
+    position: fixed; 
+    transition: transform 600ms, opacity 600ms;
+    transform: translateY(-100vh);     
+    opacity: 0.5;
+}
+
+div.content.roll-down{
+    position: fixed; 
+    transition: transform 600ms;
+    transform: translateY(100vh);    
+    transition: transform 600ms, opacity 600ms; 
+    opacity: 0.5;
+}
+
+div.content.back{ z-index: 3; }
+
+div.content.active{ z-index: 4; }

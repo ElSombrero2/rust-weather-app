@@ -1,0 +1,37 @@
+body{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+
+    ma-action{
+        position: absolute;
+        z-index: 1000;
+        left: 150px;
+        bottom: 160px;
+    }
+}
+
+div#root{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 5px;
+    overflow: hidden;
+    div.loading-screen{
+        background-color: #00000066;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 10000;
+        display: none;
+        border-radius: 5px;
+    }
+}
+
+div#root.loading{
+    background-color: #4F7282;
+    background: url(./assets/bg.webp);
+    background-position: center;
+    background-size: cover;
+    div.loading-screen{ display: block; }
+    ma-action{display: none;}
+}
